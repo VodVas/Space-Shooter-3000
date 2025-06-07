@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyMover : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField, Range(1f, 20f)] private float _speed = 5f;
 
     private GameSpeedController _speedController;
 

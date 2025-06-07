@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Collider2D))]
 public class ProjectileMover : MonoBehaviour
 {
-    [SerializeField] private float _speed = 5f;
+    [SerializeField, Range (0.5f, 10f)] private float _speed = 5f;
     [SerializeField] private float _lifeTime = 2f;
     [SerializeField] private Vector2 _direction = Vector2.up;
 
@@ -14,6 +14,7 @@ public class ProjectileMover : MonoBehaviour
     private void Awake()
     {
         _projectile = GetComponent<Projectile>();
+
         GetComponent<Collider2D>().isTrigger = true;
     }
 

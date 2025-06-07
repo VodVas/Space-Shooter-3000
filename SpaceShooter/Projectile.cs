@@ -1,11 +1,15 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Projectile : MonoBehaviour, ITerminatable
 {
-    public event System.Action<ITerminatable> Terminated;
+    public event Action<ITerminatable> Terminated;
     private bool _isTerminated;
 
-    private void OnEnable() => _isTerminated = false;
+    private void OnEnable()
+    {
+        _isTerminated = false;
+    }
 
     public void ReturnToPool()
     {
